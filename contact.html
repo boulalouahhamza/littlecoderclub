@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا | نادي المبرمج الصغير</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">تواصل معنا</div>
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="gallery.html">النشاطات</a>
+        <a href="courses.html">دروس أونلاين</a>
+        <a href="activities.html">الدورات</a>
+        <a href="parents.html">التسجيل</a>
+        <a href="contact.html">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title">معلومات التواصل</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>الهاتف</h3>
+          <p>0554289406</p>
+        </div>
+        <div class="card">
+          <h3>البريد</h3>
+          <p><a href="mailto:littlecoderclub@gmail.com">littlecoderclub@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <h3>العنوان</h3>
+          <p>المركب الجواري عين التوتة - باتنة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title">راسلنا الآن</h2>
+      <form id="contactForm" class="card">
+        <label>الاسم
+          <input required name="name" style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #e5e7eb">
+        </label>
+        <div style="height:10px"></div>
+        <label>البريد الإلكتروني
+          <input required type="email" name="email" style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #e5e7eb">
+        </label>
+        <div style="height:10px"></div>
+        <label>رسالتك
+          <textarea required name="message" rows="5" style="width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #e5e7eb"></textarea>
+        </label>
+        <div style="height:14px"></div>
+        <button type="submit" class="btn btn-primary">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> نادي المبرمج الصغير</p>
+    </div>
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // تهيئة EmailJS
+    emailjs.init("fs8cs7i3U3YXz4xlI"); // User ID الخاص بك
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // منع الإرسال التقليدي
+      emailjs.sendForm('service_odo5ziu', 'template_t0r0mgz', this)
+        .then(() => {
+          alert('تم إرسال الرسالة بنجاح!');
+          this.reset();
+        }, (err) => {
+          alert('حدث خطأ أثناء الإرسال، حاول مرة أخرى.');
+          console.log(err);
+        });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
