@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>نادي المبرمج الصغير</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="light">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار النادي" />
+                <div>
+                    <div class="logo-title">نادي المبرمج الصغير</div>
+                    <div class="logo-subtitle muted">تعلم، اختبر، وابتكر</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <nav>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#courses">الدورات</a></li>
+                        <li><a href="#competitions">المسابقات</a></li>
+                        <li><a href="#activities">النشاطات</a></li>
+                        <li><a href="#projects">المشاريع</a></li>
+                        <li><a href="#about">عن النادي</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <label class="switch">
+                    <input type="checkbox" id="themeSwitch" onchange="toggleTheme()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#home" onclick="toggleMenu()">الرئيسية</a>
+                <a href="#courses" onclick="toggleMenu()">الدورات</a>
+                <a href="#competitions" onclick="toggleMenu()">المسابقات</a>
+                <a href="#activities" onclick="toggleMenu()">النشاطات</a>
+                <a href="#projects" onclick="toggleMenu()">المشاريع</a>
+                <a href="#about" onclick="toggleMenu()">عن النادي</a>
+                <a href="#contact" onclick="toggleMenu()">تواصل معنا</a>
+            </div>
+        </header>
+
+        <main>
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <h1>مرحبا بكم في نادي المبرمج الصغير</h1>
+                    <p>نقدم ورشات ودورات تعليمية في البرمجة، الإلكترونيات والروبوتيك للأطفال من سن 08 إلى 16 سنة.</p>
+                    <div class="cta">
+                        <a class="btn" href="#courses">تصفح الدورات</a>
+                        <a class="btn" href="#contact">اتصل بنا</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-coder.png" alt="مبرمج صغير يبرمج على الكمبيوتر">
+                </div>
+            </section>
+
+            <section id="courses">
+                <h2>الدورات التعليمية</h2>
+                <div class="grid" id="coursesGrid">
+                    <article class="course">
+                        <img src="images/course1.png" alt="سكراتش">
+                        <h3>سكراتش</h3>
+                        <p>تعلم أساسيات البرمجة باستخدام برنامج سكراتش بطريقة ممتعة وتفاعلية.</p>
+                        <button class="btn" onclick="openRegister('سكراتش')">سجل</button>
+                    </article>
+                    <article class="course">
+                        <img src="images/course2.webp" alt="أردوينو">
+                        <h3>أردوينو</h3>
+                        <p>أساسيات الإلكترونيات مع مشاريع عملية باستخدام لوحةالأردوينو.</p>
+                        <button class="btn" onclick="openRegister('أردوينو')">سجل</button>
+                    </article>
+                    <article class="course">
+                        <img src="images/course3.png" alt="بايثون">
+                        <h3>بايثون</h3>
+                        <p>تعلم أساسيات ومبادئ البرمجة والخوارزميات عن طريق لغة البرمجة بايثون.</p>
+                        <button class="btn" onclick="openRegister('بايثون')">سجل</button>
+                </div>
+            </section>
+
+            <section id="competitions">
+                <h2>مسابقات النادي</h2>
+                <div class="grid" id="competitionsGrid">
+                    <article class="course">
+                        <img src="images/competition_scratch.png" alt="مسابقة سكراتش 2025">
+                        <h3>مسابقة سكراتش السنوية (2025)</h3>
+                        <p>منافسة برمجية ودية بين طلاب النادي لإنشاء أفضل لعبة أو قصة تفاعلية باستخدام سكراتش.</p>
+                        <button class="btn" onclick="openRegister('مسابقة سكراتش السنوية 2025')">سجل الآن</button>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="activities">
+                <h2>نشاطات النادي</h2>
+                <div class="gallery" id="activitiesGrid">
+                    <article class="photo">
+                        <img src="images/activity1.jfif" alt="نشاط 1">
+                        <h3>المخيم الصيفي للتكنولوجيا 2025</h3>
+                        <p>تميز المخيم الصيفي بمجموعة من الورشات التقنية والإبداعية، شملت الروبوتيك والأردوينو، تطوير مواقع الويب، التصميم ثلاثي الأبعاد.</p>
+                    </article>
+                    <article class="photo">
+                        <img src="images/activity2.jpg" alt="نشاط 2">
+                        <h3>ورشة تعلم أساسيات البرمجة</h3>
+                        <p>زهرات الكشافة الإسلامية لمدينة عين التوتة،استكشفن أساسيات البرمجة بأسلوب ممتع وتفاعلي يجمع بين التعلم والمرح.</p>
+                    </article>
+                    <article class="photo">
+                        <img src="images/activity3.jpg" alt="نشاط 3">
+                        <h3>مسابقة سكراتش للبرمجة</h3>
+                        <p>نظم نادي المبرمج الصغير الطبعة الأولى من مسابقة سكراتش للبرمجة، الأولى من نوعها على مستوى مدينة عين التوتة، وسط أجواء من الإبداع والتحدي.</p>
+                    </article>
+                    <article class="photo">
+                        <img src="images/activity4.jpg" alt="نشاط 4">
+                        <h3>إحياء ذكرى تأميم المحروقات</h3>
+                        <p>شارك نادي المبرمج الصغير في عرض مشاريعه بمناسبة ذكرى تأميم المحروقات، وذلك بدعوة من مركز الترفيه العلمي باتنة.</p>
+                    </article>
+                    <article class="photo">
+                        <img src="images/activity5.jpg" alt="نشاط 4">
+                        <h3>ورشة البرمجة والروبوتيك للأطفال</h3>
+                        <p>شارك نادي المبرمج الصغير، تحت إشراف مديرية الشباب والرياضة، في إطار نشاطات العطلة الشتوية، بورشة برمجة وروبوتيك للأطفال بالقاعة المتعددة الرياضات كشيدة.</p>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="projects">
+                <h2>مشاريع الطلاب</h2>
+                <div class="gallery" id="projectsGrid">
+                    <article class="photo">
+                        <img src="images/project1.jpg" alt="مشروع روبوت">
+                        <h3>جهاز إنذار</h3>
+                        <p>مشروع جهاز انذار يتم التحكم به عن طريق الأردوينو، من تصميم وبرمجة طلاب النادي.</p>
+                    </article>
+                    <article class="photo">
+                        <img src="images/project2.png" alt="مشروع لعبة">
+                        <h3>لعبة المتاهة</h3>
+                        <p>لعبة تفاعلية بسيطة تم تطويرها باستخدام برنامج Scratch من قبل الطالب مهدي.</p>
+                    </article>
+                    <article class="photo">
+                        <img src="images/project3.png" alt="مشروع تطبيق">
+                        <h3>تطبيق حاسبة</h3>
+                        <p>تطبيق حاسبة بسيط لعمليات الجمع والطرح، من إنجاز الطالب جود.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="about">
+                <h2>عن النادي</h2>
+                <p class="muted-text">تأسس نادي المبرمج الصغير بهدف تعليم الأطفال البرمجة والروبوتات والإلكترونيات بطرق ممتعة وعملية. النادي يوفّر بيئة محفزة على الإبداع ويشرف عليه مؤطرون مختصون.</p>
+
+                <h3>ماذا نقدم؟</h3>
+                <div class="services-container">
+                    <div class="service-card">
+                        <i class="fas fa-code"></i>
+                        <h4>البرمجة</h4>
+                        <p>أساسيات البرمجة بلغات بسيطة وممتعة مثل سكراتش وبايثون.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-robot"></i>
+                        <h4>الروبوتيك</h4>
+                        <p>بناء وبرمجة الروبوتات باستخدام منصات مثل Arduino و Micro-bit.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>الذكاء الاصطناعي</h4>
+                        <p>مقدمة مبسطة لمفاهيم الذكاء الاصطناعي وكيفية استخدامه في المشاريع.</p>
+                    </div>
+                </div>
+                
+                <h3>مؤسس النادي</h3>
+                <div class="cv-card">
+                    <div class="cv-header">
+                        <img src="images/hamza.png" alt="صورة حمزة" class="cv-photo">
+                        <div>
+                            <h3>حمزة بوللواح</h3>
+                            <p class="cv-title">مؤسس النادي ومؤطر برمجة</p>
+                            <div class="social-links-about">
+                                <a href="https://www.facebook.com/boulalouahhamza/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/boulalouahhamza/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://dz.linkedin.com/in/boulalouahhamza" target="_blank" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.youtube.com/@boulalouahhamza" target="_blank" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.tiktok.com/@boulalouahhamza" target="_blank" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h4><i class="fas fa-briefcase"></i> ملخص</h4>
+                        <p>
+                            مهندس ألية وأنظمة ومؤسس نادي المبرمج الصغير. أمتلك خبرة واسعة في تدريب الأطفال على أساسيات البرمجة، الإلكترونيات، والروبوتات، وأسعى لخلق بيئة تعليمية مبتكرة تحفز الإبداع والابتكار لدى الجيل القادم.
+                        </p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h4><i class="fas fa-cogs"></i> المهارات</h4>
+                        <div class="skills-grid">
+                            <span><i class="fas fa-terminal"></i> برمجة</span>
+                            <span><i class="fas fa-robot"></i> روبوتات</span>
+                            <span><i class="fas fa-microchip"></i> أردوينو</span>
+                            <span><i class="fas fa-desktop"></i> تصميم ويب</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>تواصل معنا</h2>
+                <div class="contact-container">
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.3690258960396!2d5.906969669486113!3d35.37130233773661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f4433279e42fb5%3A0x70cc98675ab4d0c6!2z2KfZhNmF2LHZg9ioINin2YTYsdmK2KfYttmKINin2YTYrNmI2KfZiiDZhNiu2LbYsSDYudio2K8g2KfZhNit2YI!5e0!3m2!1sen!2sdz!4v1761507301898!5m2!1sen!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-details-group">
+                            <div class="contact-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <div><strong>العنوان</strong></div>
+                                    <div class="muted-text">المركب الجواري، عين التوتة، باتنة</div>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <div><strong>الهاتف</strong></div>
+                                    <div class="muted-text">0554289406</div>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <div><strong>البريد</strong></div>
+                                    <div class="muted-text">littlecoderclub@gmail.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/littlecoderclub" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/littlecoderclub/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@littlecoderclub" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>© جميع الحقوق محفوظة — نادي المبرمج الصغير</footer>
+
+        <div class="bottom-nav-bar">
+            <a href="#home" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span class="nav-label">الرئيسية</span>
+            </a>
+            <a href="#courses" class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="nav-label">الدورات</span>
+            </a>
+            <a href="#competitions" class="nav-item">
+                <i class="fas fa-trophy"></i>
+                <span class="nav-label">المسابقات</span>
+            </a>
+            <a href="#activities" class="nav-item">
+                <i class="fas fa-camera"></i>
+                <span class="nav-label">النشاطات</span>
+            </a>
+        </div>
+        <dialog class="modal" id="registerModal">
+            <div class="modal-content">
+                <h3>تسجيل في الدورة</h3>
+                <p class="modal-description">يرجى ملء النموذج أدناه لإكمال عملية التسجيل.</p>
+                <form id="registerForm" action="https://formspree.io/f/mblkbydo" method="POST" class="register-form">
+                    <input type="text" name="studentName" placeholder="اسم الطفل" required>
+                    <input type="number" name="studentAge" placeholder="عمر الطفل" min="4" max="18" required>
+                    <input type="text" name="parentPhone" placeholder="هاتف ولي الأمر" required>
+                    <input type="hidden" name="selectedCourse" id="selectedCourse" readonly class="readonly-input" required>
+                    <div class="modal-actions">
+                        <button class="btn" type="submit">تأكيد التسجيل</button>
+                        <button type="button" class="btn cancel-btn" onclick="closeRegister()">إلغاء</button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
